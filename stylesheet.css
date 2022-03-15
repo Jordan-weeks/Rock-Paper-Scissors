@@ -1,0 +1,31 @@
+body {
+    margin: 0px;
+    background-color: #A19882
+;
+}
+
+.header{
+    margin: 0px 0px 25px;
+    padding: 25px;
+    text-align: center;
+    background-color: #C2B8A3;
+    
+    font-size: 2em;
+}
+.selection{
+   background-color: #C2B8A3;
+   /* size: 50px 50px; */
+   width: 10rem;
+   height: 10rem;
+   display: flex;
+   font-size: 2em;
+   justify-content: center;
+   align-items: center;
+
+}
+.choices{
+display: flex;
+align-items: center;
+
+justify-content: space-evenly;
+}

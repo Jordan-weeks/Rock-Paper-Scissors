@@ -1,4 +1,4 @@
-// computer choses rock/paper/scissors
+/* // computer choses rock/paper/scissors
 function computerPlay (){
     let computerChoices = ["rock","paper","scissors"];
     let computer= computerChoices[Math.floor(Math.random()*computerChoices.length)];
@@ -28,8 +28,6 @@ console.log (`The score in now computer:${computerScore} user:${userScore}`)
 }
 
 function playGame(){
-    
-    
 while (computerScore < 5 && userScore <5){
     let computerSelection = computerPlay();
     let userSelection = userPlay();
@@ -38,15 +36,58 @@ playRound(computerSelection, userSelection)
 
 }
 }
+ */
 
 // declare score
 let computerScore = 0
 let userScore = 0
-/* playGame() */
 
-function hi(){
-    (console.log("hi"))
-}
+
+
+
+
+let outcome = (outcome) => results.innerHTML = (outcome);
+let updateScore = (winner) => scoreboard.innerHTML = (winner);
+const scoreboard = document.querySelector("#score");
+const results = document.querySelector("#outcome");
+
+// user selects option
 const rock = document.getElementById("rock");
-rock.addEventListener("click", hi);
+rock.addEventListener("click", () => playRound("rock"));
 
+ const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => playRound("paper"));
+
+const scissors = document.getElementById("scissors");
+scissors.addEventListener("click", () => playRound("scissors"));
+
+// Computer selects option.
+
+function computerPlay (){
+    let computerChoices = ["rock", "paper", "scissors"];
+    let computer= computerChoices[Math.floor(Math.random()*computerChoices.length)];
+    return computer;
+}
+// play round
+ function playRound (user){
+    console.log(user)
+ let computer = computerPlay()
+
+
+
+ 
+
+
+    if(user == "rock" & computer == "scissors"){ outcome(`The computer chose ${computer}. You win!`) + userScore ++
+    }
+    else if(user == "paper" & computer == "rock"){ outcome(`The computer chose ${computer}. You win!`) + userScore ++
+    }
+    else if(user == "scissors" & computer == "paper"){ outcome(`The computer chose ${computer}. You win!`) + userScore ++
+    }
+    else if(user === computer){outcome(`The computer chose ${computer}. It's a draw`) }
+    else{ outcome(`The computer chose ${computer}. You lose!`) + computerScore ++}
+
+    updateScore (`The score in now Computer:${computerScore} User:${userScore}`) 
+    }
+
+// update score
