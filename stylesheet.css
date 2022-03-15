@@ -29,3 +29,13 @@ align-items: center;
 
 justify-content: space-evenly;
 }
+.reset{
+    background-color: #C2B8A3;
+   margin: 4rem;
+   width: 10rem;
+   height: 5rem;
+   display: flex;
+   font-size: 2em;
+   justify-content: center;
+   align-items: center;
+}

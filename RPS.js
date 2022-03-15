@@ -38,18 +38,21 @@ playRound(computerSelection, userSelection)
 }
  */
 
-// declare score
-let computerScore = 0
-let userScore = 0
+// reset button
 
 
-
-
-
-let outcome = (outcome) => results.innerHTML = (outcome);
-let updateScore = (winner) => scoreboard.innerHTML = (winner);
 const scoreboard = document.querySelector("#score");
 const results = document.querySelector("#outcome");
+let outcome = (outcome) => results.innerHTML = (outcome);
+let updateScore = (score) => scoreboard.innerHTML = (score);
+
+// declare score
+let computerScore = 0;
+let userScore = 0;
+
+
+// max score
+
 
 // user selects option
 const rock = document.getElementById("rock");
@@ -70,13 +73,7 @@ function computerPlay (){
 }
 // play round
  function playRound (user){
-    console.log(user)
  let computer = computerPlay()
-
-
-
- 
-
 
     if(user == "rock" & computer == "scissors"){ outcome(`The computer chose ${computer}. You win!`) + userScore ++
     }
@@ -88,6 +85,23 @@ function computerPlay (){
     else{ outcome(`The computer chose ${computer}. You lose!`) + computerScore ++}
 
     updateScore (`The score in now Computer:${computerScore} User:${userScore}`) 
-    }
 
-// update score
+    if (computerScore >= 5){
+        updateScore ("The computer has won this time...")
+        scissors.removeEventListener("click", () => playRound("scissors"));
+        
+    }
+    else if (userScore >=5){
+        updateScore ("well done! You have won!")
+        scissors.removeEventListener("click", () => playRound("scissors"));
+   }}
+
+// reset button
+let originalOutcome = "Rock, Paper, Scissors"
+let originalScore = "Good luck..."
+const reset = document.querySelector(".reset")
+reset.addEventListener("click", () =>{ 
+outcome(originalOutcome),
+updateScore(originalScore),
+computerScore = 0,
+userScore = 0});
