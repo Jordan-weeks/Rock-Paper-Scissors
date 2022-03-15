@@ -42,4 +42,11 @@ playRound(computerSelection, userSelection)
 // declare score
 let computerScore = 0
 let userScore = 0
-playGame()
+/* playGame() */
+
+function hi(){
+    (console.log("hi"))
+}
+const rock = document.getElementById("rock");
+rock.addEventListener("click", hi);
+
